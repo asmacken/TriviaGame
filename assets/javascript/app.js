@@ -3,8 +3,36 @@ $(document).ready(function() {
     $('#question-container').animate({
       height: 'toggle'
     }, 1000);
+    run();
   });
 
+  var randomTriviaOne = Math.floor(Math.random() * triviaQuestionOne.length);
+
+  var randomTriviaTwo = Math.floor(Math.random() * triviaQuestionTwo.length);
+
+  var randomTriviaThree = Math.floor(Math.random() * triviaQuestionThree.length);
+
+
+  var triviaQuestionOne = [
+    "When was Beyonce born?",
+    "What is the name of her all-woman live ensemble band?"
+  ]
+
+  var triviaQuestionTwo = [
+    "Beyonce is the first woman to win six Grammys in a single night.",
+    "What is the name of her alter ego?"
+  ]
+
+  var triviaQuestionThree = [
+    "How many children does she have?",
+    "Which rapper is Beyonce married to?"
+  ]
+
+  $("#question-one").text(triviaQuestionOne[randomTriviaOne]);
+
+  $("#question-two").text(triviaQuestionTwo[randomTriviaTwo]);
+
+  $("#question-three").text(triviaQuestionThree[randomTriviaThree]);
 
   function run() {
     timerStart = setInterval(decrement, 1000);
@@ -36,12 +64,12 @@ $(document).ready(function() {
     }
   }
 
-  //  The stop function
-  function stop() {
+})
+//  The stop function
+function stop() {
 
-    clearInterval(intervalId);
-  }
-});
+  clearInterval(intervalId);
+}
 
 
 // 1. Still need to figure out how to input the timerStar
